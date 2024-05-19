@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical"
+    android:background="@color/white2"
+    tools:context=".Fragments.MenuBottomSheetFragment">
+
+    <ImageView
+        android:id="@+id/buttonBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_baseline_keyboard_backspace_24"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"/>
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+ android:text="Menu"
+        android:fontFamily="@font/ultraregular"
+        android:textColor="@color/black"
+android:gravity="center"
+        android:textSize="24sp"
+        />
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menuRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        tools:listitem="@layout/menu"
+        />
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">MANOTO</string>
+    <string name="manoto">MANOTO</string>
+    <string name="food_delivery">Food Delivery</string>
+    <string name="sign_up_here">Sign Up Here</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="or">Or</string>
+    <string name="sign_up_with">Sign Up with</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_account">Already Have Account</string>
+    <string name="design_by_n_saleh">Design By\n Saleh</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="continue_with">Continue with</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_account">Don\'t Have Account?</string>
+    <string name="enjoy_restaurant_tasty_meals_n_at_home">Enjoy Restaurant Tasty Meals \n at Home</string>
+    <string name="next">Next</string>
+    <string name="create_account">Create account</string>
+    <string name="choose_your_location">Choose your location</string>
+    <string name="choose_location">Choose Location</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="staple_foods">Staple Foods</string>
+    <string name="menu">Menu</string>
+    <string name="_200_afg">200 afg</string>
+    <string name="add_to_card">Add to card</string>
+    <string name="cart">Cart</string>
+    <string name="Cart" />
+    <string name="search">Search</string>
+    <string name="recent_buy">Recent buy</string>
+    <string name="edit">Edit</string>
+    <string name="place_my_order">Place My Order</string>
+    <string name="go_home">Go Home</string>
+    <string name="default_web_client_id" translatable="false">283458502978-v6i607mnjtvtj5abm719s24462emd73m.apps.googleusercontent.com</string>
+
+</resources>

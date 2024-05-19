@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white2"
+    tools:context=".HistoryFragment">
+
+    <TextView
+        android:id="@+id/tvRecentbuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recent_buy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/ultraregular"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        />
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/historyCartView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+
+        app:cardCornerRadius="16sp"
+        app:cardElevation="4dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRecentbuy">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/recentlyBuyItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivHistoryImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/coffee"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvFoodNameHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Name"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/ultraregular"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvFoodPriceHistory"
+                app:layout_constraintStart_toEndOf="@+id/ivHistoryImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvFoodPriceHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotobolditalic"
+                android:text="@string/_200_afg"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintStart_toStartOf="@+id/tvFoodNameHistory"
+                app:layout_constraintTop_toBottomOf="@+id/tvFoodNameHistory" />
+
+            <TextView
+                android:id="@+id/tvReceived"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recieved"
+                android:fontFamily="@font/ultraregular"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+              android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardCornerRadius="20dp"
+
+              app:cardBackgroundColor="@color/lightGreen"
+                app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="@id/tvReceived"
+                app:layout_constraintEnd_toEndOf="@id/tvReceived"
+
+                app:layout_constraintTop_toBottomOf="@id/tvReceived"
+
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/ultraregular"
+        android:text="previously buy"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyCartView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/historyRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        tools:listitem="@layout/recentbuy"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

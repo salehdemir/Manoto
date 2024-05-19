@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white2"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+
+    <ImageView
+        android:id="@+id/logLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:src="@drawable/applogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ultraregular"
+        android:text="@string/manoto"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/logLogo"
+        app:layout_constraintStart_toStartOf="@+id/logLogo"
+        app:layout_constraintTop_toBottomOf="@id/logLogo" />
+
+    <TextView
+        android:id="@+id/subTitleLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/glegoobold"
+        android:text="@string/food_delivery"
+        android:textColor="@color/red"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/titleLog"
+        app:layout_constraintStart_toStartOf="@+id/titleLog"
+        app:layout_constraintTop_toBottomOf="@id/titleLog" />
+
+    <TextView
+        android:id="@+id/tvLogLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/glegoobold"
+        android:text="@string/sign_up_here"
+        android:textColor="@color/red"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/subTitleLog"
+        app:layout_constraintStart_toStartOf="@+id/subTitleLog"
+        app:layout_constraintTop_toBottomOf="@id/subTitleLog" />
+
+    <EditText
+        android:id="@+id/signName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="15dp"
+        android:elevation="5dp"
+        android:ems="15"
+        android:paddingStart="8dp"
+        android:hint="@string/name"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvLogLogin"
+        app:layout_constraintStart_toStartOf="@id/tvLogLogin"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogLogin" />
+
+    <EditText
+        android:id="@+id/signEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:drawableStart="@drawable/email_24"
+        android:drawablePadding="15dp"
+        android:elevation="5dp"
+        android:layout_marginTop="8dp"
+        android:ems="15"
+        android:hint="@string/email"
+        android:paddingStart="8dp"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/signName"
+        app:layout_constraintStart_toStartOf="@+id/signName"
+        app:layout_constraintTop_toBottomOf="@+id/signName" />
+
+    <EditText
+
+        android:id="@+id/signPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="15dp"
+        android:elevation="5dp"
+        android:ems="15"
+        android:hint="@string/password"
+        android:paddingStart="8dp"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/signEmail"
+        app:layout_constraintStart_toStartOf="@+id/signEmail"
+        app:layout_constraintTop_toBottomOf="@+id/signEmail" />
+
+    <TextView
+        android:id="@+id/tvLogOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/or"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/signPassword"
+        app:layout_constraintStart_toStartOf="@+id/signPassword"
+        app:layout_constraintTop_toBottomOf="@id/signPassword" />
+
+    <TextView
+        android:id="@+id/tvLogWith"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/ultraregular"
+        android:text="@string/sign_up_with"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tvLogOr"
+        app:layout_constraintStart_toStartOf="@+id/tvLogOr"
+        app:layout_constraintTop_toBottomOf="@id/tvLogOr" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/whitebutton"
+        android:drawableStart="@drawable/google1"
+        android:drawablePadding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="20dp"
+        android:text="@string/google"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/btnSignFacebook"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLogWith" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/whitebutton"
+        android:drawableStart="@drawable/facebook1"
+        android:drawablePadding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="20dp"
+        android:text="@string/facebook"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnSignGoogle"
+        app:layout_constraintTop_toBottomOf="@id/tvLogWith" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/redbutton"
+        android:text="@string/create_account"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/btnSignFacebook"
+        app:layout_constraintStart_toStartOf="@+id/btnSignGoogle"
+        app:layout_constraintTop_toBottomOf="@id/btnSignGoogle" />
+
+    <TextView
+        android:id="@+id/tvAlreadyhaveaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/already_have_account"
+        android:textColor="@color/lightGreen"
+        android:textSize="16sp"
+     app:layout_constraintTop_toBottomOf="@id/btnSignSignup"
+        android:layout_marginTop="16dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/btnSignSignup"
+        app:layout_constraintStart_toStartOf="@+id/btnSignSignup" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/ultraregular"
+        android:text="@string/design_by_n_saleh"
+        android:textAlignment="center"
+        android:textColor="@color/lightGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvAlreadyhaveaccount"
+        app:layout_constraintStart_toStartOf="@+id/tvAlreadyhaveaccount" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

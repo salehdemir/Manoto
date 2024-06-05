@@ -81,30 +81,39 @@
                 app:layout_constraintStart_toStartOf="@+id/tvFoodNameHistory"
                 app:layout_constraintTop_toBottomOf="@+id/tvFoodNameHistory" />
 
-            <TextView
-                android:id="@+id/tvReceived"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReceived"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recieved"
-                android:fontFamily="@font/ultraregular"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-              android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
+                android:visibility="invisible"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/greenbtn"
+                android:padding="8dp"
+                android:text="Received"
+                android:textSize="16sp"
+
+                android:textAllCaps="false"
+
+                />
+
+
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/orderStatus"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 app:cardCornerRadius="20dp"
-
-              app:cardBackgroundColor="@color/lightGreen"
+android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+              app:cardBackgroundColor="#CCCCCC"
                 app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintStart_toStartOf="@id/tvReceived"
-                app:layout_constraintEnd_toEndOf="@id/tvReceived"
+              app:layout_constraintStart_toStartOf="@id/btnReceived"
+                app:layout_constraintEnd_toEndOf="@id/btnReceived"
 
-                app:layout_constraintTop_toBottomOf="@id/tvReceived"
+                app:layout_constraintTop_toBottomOf="@id/btnReceived"
 
                 />
 

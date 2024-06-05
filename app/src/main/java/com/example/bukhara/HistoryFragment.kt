@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.collection.LLRBNode.Color
 
 
 class HistoryFragment : Fragment() {
@@ -48,8 +49,17 @@ class HistoryFragment : Fragment() {
         binding.recentlyBuyItem.setOnClickListener{
             recentItemsBuy()
         }
+        binding.btnReceived.setOnClickListener {
+            updateOrderStatus()
+        }
 
         return binding.root
+    }
+
+    private fun updateOrderStatus() {
+val itemPushKey = listOfOrderItem[0].itemPushKey
+        val completeOrderRef = database.reference.child("CompletedOrder").child(itemPushKey!!)
+        completeOrderRef.child("paymentReceived").setValue(true)
     }
 
     private fun recentItemsBuy() {
@@ -61,7 +71,7 @@ class HistoryFragment : Fragment() {
     }
 
     private fun retrieveBuyHistory() {
-binding.recentlyBuyItem.visibility = View.INVISIBLE
+//binding.recentlyBuyItem.visibility = View.INVISIBLE
         userId = auth.currentUser?.uid?:""
 
         val buyItemRef :DatabaseReference = database.reference.child("user").child(userId).child("BuyHistory")
@@ -77,7 +87,9 @@ binding.recentlyBuyItem.visibility = View.INVISIBLE
                 }
                 listOfOrderItem.reverse()
                 if (listOfOrderItem.isNotEmpty()){
+//                    Display the most recent item details
                     setDataInRecentBuyItem()
+//                    set up the recycleView with previous order details
                     setPreviousBuyItemRecyclerView()
                 }
             }
@@ -90,24 +102,29 @@ binding.recentlyBuyItem.visibility = View.INVISIBLE
         })
     }
 
+//    function to display the most recent order detail
     private fun setDataInRecentBuyItem() {
-        binding.recentlyBuyItem.visibility = View.VISIBLE
+
         val recentOrderItem = listOfOrderItem.firstOrNull()
         recentOrderItem?.let {
             with(binding){
                 tvFoodNameHistory.text = it.foodName?.firstOrNull()?:""
                 tvFoodPriceHistory.text = it.foodPrice?.firstOrNull()?:""
                 val image = it.foodImage?.firstOrNull()?:""
-                val uri = Uri.parse(image)
-                Glide.with(requireContext()).load(uri).into(ivHistoryImage)
+//                val uri = Uri.parse(image)
+                Glide.with(requireContext()).load(image).into(ivHistoryImage)
 
-                listOfOrderItem.reverse()
-                if (listOfOrderItem.isNotEmpty()){
-
+val isOrderIsAccepted = listOfOrderItem[0].orderAccepted
+                if(isOrderIsAccepted){
+                    orderStatus.background.setTint(android.graphics.Color.GREEN)
+                    btnReceived.visibility = View.VISIBLE
                 }
+
+
             }
         }
     }
+//                    Function to set up the recycleView with previous order details
 
     private fun setPreviousBuyItemRecyclerView() {
         val recentFoodName = mutableListOf<String>()

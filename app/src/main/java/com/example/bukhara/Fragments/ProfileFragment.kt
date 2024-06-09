@@ -1,11 +1,14 @@
 package com.example.bukhara.Fragments
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.bukhara.LogInActivity
 import com.example.bukhara.R
 import com.example.bukhara.databinding.FragmentProfileBinding
 import com.example.bukhara.model.UserModel
@@ -20,6 +23,7 @@ class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
     private val auth  = FirebaseAuth.getInstance()
     private val database  = FirebaseDatabase.getInstance()
+    private lateinit var requireContext : Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +34,10 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
     binding  = FragmentProfileBinding.inflate(inflater,container,false)
+        binding.logOut.setOnClickListener {
+            auth.signOut()
+            startActivity(Intent(requireContext,LogInActivity::class.java))
+        }
 
         setUserData()
 

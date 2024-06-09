@@ -59,6 +59,7 @@ class SignUpActivity : AppCompatActivity() {
         binding.tvAlreadyhaveaccount.setOnClickListener{
             val intent = Intent(this,LogInActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         binding.btnSignGoogle.setOnClickListener {

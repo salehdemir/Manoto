@@ -31,7 +31,7 @@ class NotificationBottomSheet : BottomSheetDialogFragment(){
         val notificationText = listOf(
             "Your order cancelled successfully",
             "Order has been taken by driver",
-            "Congrats your order placed")
+            "Congrats your order placed",)
         val notificationImage = listOf(
             R.drawable.iconsad,
             R.drawable.deliverybike,
